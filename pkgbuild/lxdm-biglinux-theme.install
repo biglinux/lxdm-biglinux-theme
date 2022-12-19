@@ -1,7 +1,7 @@
 post_install() {
     cp /etc/lxdm/lxdm.conf /etc/lxdm/lxdm.conf.save
-    sed -i '/session=/s/.*/session=/usr/bin/wmaker/' /etc/lxdm/lxdm.conf
-    sed -i '/theme=/s/.*/theme=biglinux-theme/' /etc/lxdm/lxdm.conf
+    sed -i 's|# session=.*|session=/usr/bin/bigwmaker|g' /etc/lxdm/lxdm.conf
+    sed -i 's|theme=.*|theme=biglinux-theme|g' /etc/lxdm/lxdm.conf
 }
 
 post_remove() {
